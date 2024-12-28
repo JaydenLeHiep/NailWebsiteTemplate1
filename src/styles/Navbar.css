@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  :root {
+    --main-color: orangered;
+    --text-color: #333;
+    --background-color: white;
+    --big-font: 5rem;
+    --h2-font: 2.25rem;
+    --p-font: 0.9rem;
+  }
+  
+  *::selection {
+    background: var(--main-color);
+    color: #fff;
+  }
+  
+  body {
+    color: var(--text-color);
+    background: var(--background-color);
+    background-size: cover;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 170px;
+  }
+  
+  .logo {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 2.4rem;
+  }
+  
+  .navbar {
+    display: flex;
+  }
+  
+  .navbar a {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-weight: 500;
+  }
+  
+  .navbar a:hover {
+    color: var(--main-color);
+    transition: 1s;
+  }
+  
+  #menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      display: none;
+    }
+    #menu-icon {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    header {
+      padding: 15px 40px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .logo {
+      display: none;
+    }
+  }
+  
