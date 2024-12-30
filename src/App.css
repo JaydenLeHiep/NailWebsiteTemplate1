@@ -1,21 +1,25 @@
-/* App.css */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Make sure the body takes the full height */
-}
-
 body {
   margin: 0;
+  padding-top: 120px; /* Example: Match header height */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-p {
-  flex-grow: 1; /* Ensure the content section takes the remaining space */
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+div {
+  flex-grow: 1; /* Allows content to take remaining space */
+}
+
+footer {
+  margin-top: auto;
 }
