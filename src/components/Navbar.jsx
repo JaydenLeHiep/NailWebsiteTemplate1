@@ -46,6 +46,11 @@ const Navbar = () => {
             Contact
           </a>
         </li>
+        <li>
+          <button href="#contact" onClick={handleMenuClick}>
+            Buchen jetzt
+          </button>
+        </li>
       </ul>
     </header>
   );

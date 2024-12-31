@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding-top: 120px; /* Example: Match header height */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -10,16 +9,12 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-div {
-  flex-grow: 1; /* Allows content to take remaining space */
+.main-content {
+  flex-grow: 1; /* Only applies to main content */
 }
 
 footer {
-  margin-top: auto;
+  margin-top: auto; /* Pushes footer to the bottom */
 }

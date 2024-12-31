@@ -10,19 +10,9 @@ const Footer = () => {
           <h4>Menu Links</h4>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>Information</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#">Delivery Information</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#about">Unsere Geschichte</a></li>
+            <li><a href="#service">Preisliste</a></li>
+            <li><a href="#contact">Kontakt</a></li>
           </ul>
         </div>
 
@@ -35,7 +25,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 Foodie. All rights reserved.</p>
+        <p>&copy; 2025 Nail Salon Happy. All rights reserved.</p>
       </div>
     </footer>
   );
