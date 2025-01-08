@@ -1,0 +1,73 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white; /* Make sure header has a white background */
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem; /* Increased gap for better spacing */
+    background-color: transparent; /* Ensure background is transparent */
+  }
+  
+  .nav-links li {
+    font-size: 1.1rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333; /* Ensure links have a proper color */
+  }
+  
+  .nav-links a:hover {
+    color: #646cff;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Added gap between elements for better spacing */
+  }
+  
+  .language-selector {
+    margin-right: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .book-now {
+    background-color: #f1e7d6;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 1rem;
+    text-transform: uppercase; /* Capitalize the button text */
+  }
+  
+  .book-now:hover {
+    background-color: #d9c1a3;
+  }
+  
+  .search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-icon img {
+    width: 24px;
+    height: 24px;
+  }
