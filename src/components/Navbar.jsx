@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { BsList } from "react-icons/bs";
+import { Search } from "@mui/icons-material"; // Import Material Search icon
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(""); // State for search input
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -11,6 +13,15 @@ const Navbar = () => {
 
   const handleMenuClick = () => {
     setMenuOpen(false);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchClick = (e) => {
+    e.preventDefault();
+    alert(`Searching for: ${searchQuery}`);
   };
 
   return (
@@ -27,29 +38,55 @@ const Navbar = () => {
       </div>
       <ul className={`navbar ${menuOpen ? "open" : ""}`}>
         <li>
-          <a href="#" onClick={handleMenuClick}>
-            Home
+          <a href="#price-list" onClick={handleMenuClick}>
+            PRICE LIST
+          </a>
+        </li>
+        <li>
+          <a href="#services" onClick={handleMenuClick}>
+            OUR SERVICES
           </a>
         </li>
         <li>
           <a href="#about" onClick={handleMenuClick}>
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#menu" onClick={handleMenuClick}>
-            Service
+            ABOUT US
           </a>
         </li>
         <li>
           <a href="#contact" onClick={handleMenuClick}>
-            Contact
+            CONTACT
           </a>
         </li>
         <li>
-          <button href="#contact" onClick={handleMenuClick}>
-            Buchen jetzt
+          <a href="#work" onClick={handleMenuClick}>
+            WORK
+          </a>
+        </li>
+        <li>
+          <button className="book-now" onClick={handleMenuClick}>
+            BOOK NOW
           </button>
+        </li>
+        <li className="search-bar">
+          <form onSubmit={handleSearchClick}>
+            <div className="search-container">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                placeholder="Search..."
+              />
+              <button type="submit" className="search-icon">
+                <Search />
+              </button>
+            </div>
+          </form>
+        </li>
+        <li className="language">
+          <select>
+            <option value="de">German</option>
+            <option value="en">English</option>
+          </select>
         </li>
       </ul>
     </header>
