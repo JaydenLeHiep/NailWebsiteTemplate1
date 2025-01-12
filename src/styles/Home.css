@@ -1,10 +1,132 @@
-/* Center the content */
+/* Home Container */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    text-align: center;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem 0;
+  margin-bottom: 70px;
+}
+
+/* Background Image */
+.home-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('..//assets/BackgroundHome.webp'); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(1.4); /* Slight dimming for text visibility */
+}
+
+/* Content Section */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  gap: 3rem;
+}
+
+/* Left Side */
+.home-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Push image to the right */
+}
+
+.home-image {
+  width: 400px; /* Fixed width */
+  height: 575px; /* Fixed height */
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Ensure the image fits nicely */
+}
+
+/* Right Side */
+.home-right {
+  flex: 1;
+  color: #333;
+  text-align: left;
+  padding-left: 2rem; /* Add padding for spacing */
+}
+
+.home-right h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a0876a;
+  margin-bottom: 1rem;
+}
+
+.home-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.home-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #a0876a;
+  border-radius: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #a0876a;
+  color: #fff;
+}
+
+/* Footer Section */
+.home-footer {
+  margin-top: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem; /* Adjusted gap between phone and Instagram sections */
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start; /* Aligns icon and text vertically */
+  gap: 0.5rem; /* Reduced gap between icon and text */
+}
+
+.contact-item p {
+  font-size: 0.85rem; /* Slightly smaller text */
+  color: #a0876a;
+  margin: 0; /* Remove unnecessary margins */
+  line-height: 1.2; /* Adjust line height for tighter spacing */
+}
+
+.contact-item strong {
+  font-size: 1rem;
+  color: #a0876a;
+  margin: 0; /* Remove unnecessary margins */
+}
+
+.contact-icon {
+  font-size: 2.3rem; /* Slightly smaller icon size */
+  color: #a0876a;
+  margin-top: 0.1rem; /* Adjust vertical alignment */
+}
