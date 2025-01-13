@@ -36,26 +36,6 @@ const IntroduceStore = () => {
                         alt={`Carousel ${currentImageIndex + 1}`}
                         className="carousel-image"
                     />
-                    <button
-                        className="carousel-prev"
-                        onClick={() =>
-                            setCurrentImageIndex(
-                                (prevIndex) => (prevIndex - 1 + images.length) % images.length
-                            )
-                        }
-                    >
-                        &lt;
-                    </button>
-                    <button
-                        className="carousel-next"
-                        onClick={() =>
-                            setCurrentImageIndex(
-                                (prevIndex) => (prevIndex + 1) % images.length
-                            )
-                        }
-                    >
-                        &gt;
-                    </button>
                 </div>
                 <div className="carousel-dots">
                     {images.map((_, index) => (
