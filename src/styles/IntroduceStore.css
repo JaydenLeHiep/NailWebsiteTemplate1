@@ -114,3 +114,70 @@
   .dot.active {
     background-color: #a0876a;
   }
+
+  @media (max-width: 1030px) {
+    .introduce-store-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Fix carousel image being cut off and adjust height */
+    .store-carousel {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .carousel {
+        width: 100%; /* Make it responsive */
+        max-width: 100%; /* Set a reasonable max width */
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: auto; /* Ensure full image is visible */
+        object-fit: contain; /* Prevent image from being cut off */
+        display: block;
+    }
+
+    /* Center the Dots */
+    .carousel-dots {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px; /* Ensure spacing between image and dots */
+    }
+
+    /* Fix text inside store-text box not being centered */
+    .store-text {
+        order: 2;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .store-text h1,
+    .store-text p,
+    .about-button {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .about-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

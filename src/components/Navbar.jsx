@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BsList } from "react-icons/bs";
 import { Search } from "@mui/icons-material"; // Import Material Search icon
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search input
+  const [closing, setClosing] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const menuRef = useRef(null); // Ref for the menu
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    if (menuOpen) {
+      setClosing(true); // Trigger closing animation
+      setTimeout(() => {
+        setMenuOpen(false);
+        setClosing(false); // Reset closing state
+      }, 300); // Matches the animation duration
+    } else {
+      setMenuOpen(true);
+    }
   };
 
   const handleMenuClick = () => {
@@ -24,24 +34,44 @@ const Navbar = () => {
     alert(`Searching for: ${searchQuery}`);
   };
 
+  // Close the menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target) && event.target.id !== "menu-icon") {
+        setClosing(true);
+        setTimeout(() => {
+          setMenuOpen(false);
+          setClosing(false);
+        }, 300);
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
+
   return (
     <header>
       <a href="#" className="logo">
         Nail Salon Happy
       </a>
+
       <div
-        className={`bx bx-menu ${menuOpen ? "open" : ""}`}
+        className={`navbar-toggle ${menuOpen ? "open" : ""}`}
         id="menu-icon"
         onClick={toggleMenu}
       >
         <BsList />
       </div>
-      <ul className={`navbar ${menuOpen ? "open" : ""}`}>
-        <li>
-          <a href="#price-list" onClick={handleMenuClick}>
-            PRICE LIST
-          </a>
-        </li>
+
+      <ul ref={menuRef} className={`navbar ${menuOpen ? (closing ? "closing" : "open") : ""}`}>
         <li>
           <a href="#services" onClick={handleMenuClick}>
             OUR SERVICES
@@ -56,16 +86,6 @@ const Navbar = () => {
           <a href="#contact" onClick={handleMenuClick}>
             CONTACT
           </a>
-        </li>
-        <li>
-          <a href="#work" onClick={handleMenuClick}>
-            WORK
-          </a>
-        </li>
-        <li>
-          <button className="book-now" onClick={handleMenuClick}>
-            BOOK NOW
-          </button>
         </li>
         <li className="search-bar">
           <form onSubmit={handleSearchClick}>
@@ -89,6 +109,12 @@ const Navbar = () => {
           </select>
         </li>
       </ul>
+
+      <li>
+        <button className="book-now" onClick={handleMenuClick}>
+          BOOK NOW
+        </button>
+      </li>
     </header>
   );
 };

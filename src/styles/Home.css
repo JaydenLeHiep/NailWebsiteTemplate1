@@ -2,13 +2,14 @@
 .home-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100%; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   padding: 2rem 0;
   margin-bottom: 70px;
+  margin-top: 70px;
 }
 
 /* Background Image */
@@ -129,4 +130,63 @@
   font-size: 2.3rem; /* Slightly smaller icon size */
   color: #a0876a;
   margin-top: 0.1rem; /* Adjust vertical alignment */
+}
+
+@media (max-width: 1030px) {
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-left {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home-image {
+    width: 85%;
+    max-width: 450px; /* Prevents it from being too large */
+    height: auto;
+    object-fit: contain; /* Ensures the full image is always visible */
+  }
+
+  .home-right {
+    width: 100%;
+    padding-left: 0;
+    text-align: center; /* Center text */
+  }
+
+  .home-right h1,
+  .home-right p {
+    text-align: center;
+  }
+
+  /* Center-align contact info */
+  .contact-info,
+  .contact-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+
+  /* Center-align buttons and make them the same size */
+  .home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .home-button {
+    width: 150px; /* Ensure both buttons have the same width */
+    text-align: center;
+  }
 }

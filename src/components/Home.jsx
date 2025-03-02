@@ -16,7 +16,7 @@ const Home = () => {
         {/* Left Side - Image */}
         <div className="home-left">
           <img
-            src={TestImage} // Replace with your actual image path
+            src={TestImage}
             alt="Nail Studio"
             className="home-image"
           />
@@ -31,7 +31,7 @@ const Home = () => {
             and guarantees an unforgettable experience.
           </p>
           <div className="home-buttons">
-            <button className="home-button">OUR PRICE LIST</button>
+            <button className="home-button">OUR SERVICES</button>
             <button className="home-button">BOOK NOW</button>
           </div>
 

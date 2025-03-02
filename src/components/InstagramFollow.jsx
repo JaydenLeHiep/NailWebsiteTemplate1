@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "../styles/InstagramFollow.css";
 import Image1 from "../assets/Instagram1.webp";
 import Image2 from "../assets/Instagram2.webp";
@@ -25,7 +27,9 @@ const InstagramFollow = () => {
 
       {/* Text Section */}
       <div className="instagram-text">
-        <h1>Follow us on Instagram</h1>
+        <h1>
+          <FontAwesomeIcon icon={faInstagram} className="instagram-icon" /> Follow us on Instagram
+        </h1>
         <button className="instagram-button">OUR INSTAGRAM</button>
       </div>
 
