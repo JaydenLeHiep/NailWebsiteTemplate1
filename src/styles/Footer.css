@@ -69,7 +69,7 @@ iframe {
   border-radius: 10px;
 }
 
-/* Responsive Design */
+/* Mobile Version */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -82,7 +82,18 @@ iframe {
     text-align: center;
   }
 
-  iframe {
+  /* Improve Map Height */
+  .footer-right iframe {
     width: 100%;
+    height: 300px; /* Increased height for better visibility */
+  }
+
+  /* Adjust footer text spacing */
+  .footer-bottom {
+    padding: 20px;
+  }
+
+  .footer-bottom p {
+    padding: 10px; /* Add space to prevent text from touching edges */
   }
 }

@@ -133,3 +133,22 @@
   .lookbook-dot.lookbook-active {
     background-color: #a0876a;
   }
+
+  @media (max-width: 1030px) {
+    .lookbook-container {
+      flex-direction: column;
+    }
+  
+    .lookbook-carousel {
+      order: 1;
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .lookbook-text {
+      order: 2;
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
